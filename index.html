@@ -44,9 +44,10 @@
 	            {
 		            //alert(x + ' = ' +params[x]);
 	            }
-	            if (pageTracker._trackEvent(params.category, params.action, params.opt_label, params.opt_value, params.opt_noninteraction)){
-	            	alert('sucess');
-	            }
+	            _gaq.push(['_trackEvent', 'Videos', 'Play', 'Gone With the Wind']);
+	            //if (pageTracker._trackEvent(params.category, params.action, params.opt_label, params.opt_value, params.opt_noninteraction)){
+	            //	alert('sucess');
+	            //}
 	                          
         } catch(err) {
         	alert(err);
