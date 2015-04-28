@@ -14,10 +14,37 @@
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
       </script>
+      <script>
+        function getUrlRequest(){
+            var url = location.search; //获取url中"?"符后的字串	
+      		  var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+      			  var str = url.substr(1);
+      			  if (str.indexOf("&") != -1) {
+      				    strs = str.split("&");
+                  for (var i = 0; i < strs.length; i++) {
+      					    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                  }
+              } else {
+      				  var key = str.substring(0,str.indexOf("="));
+                var value = str.substr(str.indexOf("=")+1);
+                  theRequest[key] = decodeURI(value);
+              }
+            }
+      		  return theRequest;
+      	  }
+      </script>
       <script type="text/javascript">
         try {
               var pageTracker = _gat._getTracker("UA-62353831-1");
               pageTracker._trackPageview();
+              
+	            var params = getUrlRequest();
+	            for (x in params)
+	            {
+		            alert(x + ' = ' +params[x]);
+	            }
+	            pageTracker._trackEvent(params.category, params.action, params.opt_label, params.opt_value, params.opt_noninteraction);              
         } catch(err) {}
       </script>
   </body>
