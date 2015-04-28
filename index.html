@@ -9,7 +9,7 @@
       	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-62353831-1']); //Place correct account id
 	  _gaq.push(['_trackPageview']);
-	  //_gaq.push(['_trackEvent', 'videos', 'play', 'video marketing is awesome',]);
+	  
 	  (function() {
 	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -34,8 +34,11 @@
       		  return theRequest;
       	  }
       var params = getUrlRequest();
-      //_gaq.push(['_trackEvent', 'okvideos', 'okplay', 'okvideo marketing is awesome',]);
-      _gaq.push(['_trackEvent', params.category, params.action, params.label,]);  	  
+      if(params.value){
+      	_gaq.push(['_trackEvent', params.category, params.action, params.label, params.value]);  	  
+      }else{
+      	_gaq.push(['_trackEvent', params.category, params.action, params.label]);  	  
+      }
       </script>
   <p>1</p>
   </body>
