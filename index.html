@@ -3,22 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <title>Track/title>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-62353831-1']); //Place correct account id
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>    
   </head>
   <body>
       <script type="text/javascript">
+      	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-62353831-1']); //Place correct account id
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
         function getUrlRequest(){
             var url = location.search; //获取url中"?"符后的字串	
       		  var theRequest = new Object();
@@ -37,15 +33,7 @@
             }
       		  return theRequest;
       	  }
-        try {
-	            _gaq.push(['_trackEvent', 'Website Name and Section', '22', 'action']);
-	            //if (pageTracker._trackEvent(params.category, params.action, params.opt_label, params.opt_value, params.opt_noninteraction)){
-	            //	alert('sucess');
-	            //}
-	                          
-        } catch(err) {
-        	alert(err);
-        }      	  
+        	  
       </script>
   </body>
 </html>
